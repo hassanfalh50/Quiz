@@ -302,7 +302,8 @@ footer button.show{
     transform: scale(1);
 }
 
-.result_box{
+.result_box
+{
     background: #fff;
     border-radius: 5px;
     display: flex;
