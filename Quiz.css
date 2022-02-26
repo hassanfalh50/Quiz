@@ -239,7 +239,7 @@ section .option_list .option .icon{
     color: #23903c;
     border-color: #23903c;
     background: #d4edda;
-    padding: 0 5px;
+    padding: 5px 5px;
 }
 
 .option_list .option .icon.cross{
