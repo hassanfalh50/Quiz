@@ -137,7 +137,7 @@ shareData[f];try{quiz&&quiz.shareData[f]&&(t=quiz.shareData[f])}catch(h){}e=(doc
 (t.url[2]=e),t.url=t.url.join("/"));r=encodeURIComponent(t.url);i=encodeURIComponent(t.name?t.name:t.txt);img=encodeURIComponent(t.img);gEvent("Share Click",f,n.className);o="";t.accounts&&(o=t.accounts.
 replace(/[^a-zA-Z\_\-\,]+/gi,""));o||(o="poll_maker");u="";t.hash&&(u=t.hash.replace(/[^a-zA-Z\_\-\,]+/gi,""));u||(u=f=="quiz"?"quiz":"pollmaker");u=="quiz"&&t.url.indexOf("survey-maker")!=-1&&(u="survey");
 switch(n.className){case"fb":try{obj("fb-root").style.display=""}catch(h){}s={method:"feed",link:t.url,description:t.txt,picture:t.img};t.name&&(s.name=t.name,s.name.length>255&&(s.name=s.name.substr(
-0,255)));FB.ui(s,function(n){n&&n.post_id&&gEvent("Results","Shared","fb")});break;case"pi":window.open("https://www.pinterest.com/pin/create/button/?url="+r+"&media="+img+"","_blank","width=600, height=500");
+0,255)));FB.ui(s,function(n){n&&n.post_id&&gEvent("dddddd","Shared","fb")});break;case"pi":window.open("https://www.pinterest.com/pin/create/button/?url="+r+"&media="+img+"","_blank","width=600, height=500");
 break;case"tw":window.open("https://twitter.com/share?url="+r+"&text="+i+"&related="+o+"&hashtags="+u,"_blank","width=600, height=300");break;case"gp":window.open("https://plus.google.com/share?url="+
 r,"_blank","width=600, height=300");break;case"re":window.open("http://www.reddit.com/submit?url="+r+"&title="+i+"&related="+o+"&hashtags="+u,"_blank","");break;case"st":window.open("http://www.stumbleupon.com/badge/?url="+
 r,"_blank","width=800, height=600");break;case"tu":window.open("http://www.tumblr.com/share/link?url="+r+"&name="+i+"&description="+i,"_blank","width=900, height=700");break;case"ed":window.open("http://"+
@@ -494,7 +494,7 @@ ref=i[2],quiz.showResults(i[0]+"-"+i[1]));return}else if(r.pm)quiz.ref=="PREVIEW
 (quiz.public&&!r.dq?"/Public":"")+"/results"+(t?t+"-":"Q")+quiz.ref+(quiz.clang?"/"+quiz.clang.toUpperCase():"")+(u?"?pc="+u:""));else{typeof qz=="object"?qz.results("Q"+quiz.ref,t):quiz.showResults(t);
 return}break;case 1:quiz.setWait(1);quiz.endTMR=setTimeout(quiz.goEnd,300)}}},showResults:function(n){quiz.xSend("Quiz."+(quiz.public?"Public_":"")+"Results "+n+"-"+quiz.ref,quiz.clang?"lang="+quiz.clang.
 toUpperCase():"",function(n){return function(t){var r,f,u,i;t=="R"?(r=quiz.pHost(),f=r.loc?r.loc:"www.poll-maker.com",document.location=f+"/results"+n+"-"+qid+(quiz.clang?"/"+quiz.clang.toUpperCase():
-"")):(u=/class[\=][\'\"][^\'\"]*quiz[\-]container[^\'\"]+quiz[\-]lc[^\'\"]*[\'\"]/i.test(t),i=u?"ntabs":"results",t=t.replace(/(id=[\']quiz[\-])tabs([\'])/gi,"$1"+i+"$2").replace(/document.tabs[\[]0[\]]([\.]show[\(])/gi,
+"")):(u=/class[\=][\'\"][^\'\"]*quiz[\-]container[^\'\"]+quiz[\-]lc[^\'\"]*[\'\"]/i.test(t),i=u?"ntabs":"ddddddddddddddddddd",t=t.replace(/(id=[\']quiz[\-])tabs([\'])/gi,"$1"+i+"$2").replace(/document.tabs[\[]0[\]]([\.]show[\(])/gi,
 "quiz.obj('quiz-"+i+"').tabs$1"),quiz.reInit({html:t,lc:u,res:1,rid:n,tn:i}))}}(n))},reInit:function(n){quiz.linkTheme=quiz.obj(".qp_container LINK[id^='theme-']",2);quiz.linkTheme&&document.head.appendChild(
 quiz.linkTheme);n.m=document.querySelectorAll(".quiz-container")[0];n.phtml=n.m.innerHTML;n.html=n.html.replace(/([\=][\"\'])([\/][\/])/gi,"$1https:$2");n.m.offsetWidth<=400&&quiz.embed&&(n.m.className+=
 " quiz-small"+(n.m.offsetWidth<=250?" quiz-vsmall":""),quiz.tool=="PM"&&(n.html=n.html.replace(/qp[\-]subtab[\-]c/gi,"qp-notab-c")));/[\s]*class[\=][\'\"][^\'\"]*quiz[\-]container/.test(n.html)?n.m.outerHTML=
